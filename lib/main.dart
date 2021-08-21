@@ -11,7 +11,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Quiz App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.grey[900],
+        // primarySwatch: Colors.blue,
+      ),
+      // theme: ThemeData.dark(),
       home: WelcomeScreen(),
     );
   }
