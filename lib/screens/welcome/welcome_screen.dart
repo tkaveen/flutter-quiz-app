@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:quizapp/constants.dart';
 import 'package:websafe_svg/websafe_svg.dart';
@@ -17,13 +16,15 @@ class WelcomeScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Spacer(),
+                  Spacer(
+                    flex: 2,
+                  ),
                   Text(
-                    "Quiz",
+                    "Let's Play the Quiz",
                     style: Theme.of(context).textTheme.headline2.copyWith(
                         color: Colors.green, fontWeight: FontWeight.bold),
                   ),
-                  Text("Enter your Details",
+                  Text("Enter the required information below",
                       style: TextStyle(fontSize: 15, color: Colors.white)),
                   Spacer(),
                   TextField(
@@ -37,7 +38,25 @@ class WelcomeScreen extends StatelessWidget {
                                 BorderRadius.all(Radius.circular(12)))),
                   ),
                   Spacer(),
-                  Spacer(),
+                  InkWell(
+                    onTap: () {},
+                    child: Container(
+                      width: double.infinity,
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(kDefaultPadding * 0.75),
+                      decoration: BoxDecoration(
+                          gradient: kPrimaryGradient,
+                          borderRadius: BorderRadius.all(Radius.circular(12))),
+                      child: Text(
+                        "Lets Start Quiz",
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  Spacer(
+                    flex: 2,
+                  ),
                 ],
               ),
             ),
