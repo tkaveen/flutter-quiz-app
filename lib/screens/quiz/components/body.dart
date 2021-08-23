@@ -20,11 +20,37 @@ class Body extends StatelessWidget {
               horizontal: kDefaultPadding,
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   height: 20,
                 ),
-                ProgressBar()
+                ProgressBar(),
+                SizedBox(
+                  height: kDefaultPadding,
+                ),
+                Text.rich(TextSpan(
+                  text: "Question 1",
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline4
+                      .copyWith(color: kSecondaryColor),
+                  children: [
+                    TextSpan(
+                        text: "/10",
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline5
+                            .copyWith(color: kSecondaryColor))
+                  ],
+                )),
+                Divider(
+                  thickness: 1.5,
+                  color: Color(0xFF8B94BC),
+                ),
+                SizedBox(
+                  height: kDefaultPadding,
+                )
               ],
             ),
           ),
