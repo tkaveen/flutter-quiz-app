@@ -9,8 +9,14 @@ class Question {
 const List sample_data = [
   {
     "id": 1,
-    "question": "sadasd",
-    "options": ["apple", "apple", "apple", "apple"],
+    "question":
+        "Let R be a relation on the set L of lines defined by l1 R l2 if l1 is perpendicular to l2, then relation R is",
+    "options": [
+      "reflexive and symmetric",
+      "symmetric and transitive",
+      "equivalence relation",
+      "symmetric"
+    ],
     "answer_index": 1,
   },
   {

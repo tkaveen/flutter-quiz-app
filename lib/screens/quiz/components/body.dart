@@ -1,7 +1,11 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:quizapp/constants.dart';
+import 'package:quizapp/models/Questions.dart';
 import 'package:quizapp/screens/quiz/components/progress_bar.dart';
 import 'package:websafe_svg/websafe_svg.dart';
+
+import 'question_card.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -15,21 +19,24 @@ class Body extends StatelessWidget {
         // WebsafeSvg.asset("assets/icons/bg.svg", fit: BoxFit.cover),
 
         SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: kDefaultPadding,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  height: 20,
-                ),
-                ProgressBar(),
-                SizedBox(
-                  height: kDefaultPadding,
-                ),
-                Text.rich(TextSpan(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 20,
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                child: ProgressBar(),
+              ),
+              SizedBox(
+                height: kDefaultPadding,
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                child: Text.rich(TextSpan(
                   text: "Question 1",
                   style: Theme.of(context)
                       .textTheme
@@ -44,15 +51,20 @@ class Body extends StatelessWidget {
                             .copyWith(color: kSecondaryColor))
                   ],
                 )),
-                Divider(
-                  thickness: 1.5,
-                  color: Color(0xFF8B94BC),
+              ),
+              Divider(
+                thickness: 1.5,
+                color: Color(0xFF8B94BC),
+              ),
+              SizedBox(
+                height: kDefaultPadding,
+              ),
+              Expanded(
+                child: PageView.builder(
+                  itemBuilder: (context, index) => QuestionCard(),
                 ),
-                SizedBox(
-                  height: kDefaultPadding,
-                )
-              ],
-            ),
+              ),
+            ],
           ),
         )
       ],
