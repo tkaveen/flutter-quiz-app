@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:quizapp/controllers/question_controller.dart';
@@ -39,7 +41,10 @@ class ProgressBar extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("${(controller.animation.value * 60).round()} sec"),
+                      Text(
+                        "${(controller.animation.value * 60).round()} sec",
+                        style: TextStyle(color: Colors.white),
+                      ),
                       WebsafeSvg.asset("assets/icons/tim.svg")
                     ],
                   ),
