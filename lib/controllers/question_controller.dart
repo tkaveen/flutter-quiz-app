@@ -12,7 +12,7 @@ class QuestionController extends GetxController
       .map((question) => Question(
           id: question['id'],
           question: question['question'],
-          options: question['option'],
+          options: question['options'],
           answer: question['answer_index']))
       .toList();
 

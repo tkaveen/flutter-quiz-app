@@ -30,19 +30,13 @@ class QuestionCard extends StatelessWidget {
           SizedBox(
             height: kDefaultPadding,
           ),
-          Option(),
-          SizedBox(
-            height: kDefaultPadding,
-          ),
-          Option(),
-          SizedBox(
-            height: kDefaultPadding,
-          ),
-          Option(),
-          SizedBox(
-            height: kDefaultPadding,
-          ),
-          Option(),
+          ...List.generate(
+              question.options.length,
+              (index) => Option(
+                    index: index,
+                    text: question.options[index],
+                    press: () {},
+                  ))
         ],
       ),
     );

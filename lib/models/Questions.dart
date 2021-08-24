@@ -17,24 +17,36 @@ const List sample_data = [
       "equivalence relation",
       "symmetric"
     ],
-    "answer_index": 1,
+    "answer_index": 4,
   },
   {
     "id": 2,
-    "question": "hjghjghj",
-    "options": ["apple", "apple", "apple", "apple"],
-    "answer_index": 1,
+    "question":
+        "Given triangles with sides T1 : 3, 4, 5; T2 : 5, 12, 13; T3 : 6, 8, 10; T4 : 4, 7, 9 and a relation R in set of triangles defined as R = {(Δ1, Δ2) : Δ1 is similar to Δ2}. Which triangles belong to the same equivalence class?",
+    "options": ["T1 and T2", "T2 and T3", "T1 and T3", "T1 and T4"],
+    "answer_index": 3,
   },
   {
     "id": 3,
-    "question": "saewrwerdasd",
-    "options": ["apple", "apple", "apple", "apple"],
-    "answer_index": 1,
+    "question":
+        "Given set A ={1, 2, 3} and a relation R = {(1, 2), (2, 1)}, the relation R will be",
+    "options": [
+      "reflexive if (1, 1) is added",
+      "symmetric if (2, 3) is added",
+      "transitive if (1, 1) is added",
+      "symmetric if (3, 2) is added"
+    ],
+    "answer_index": 3,
   },
   {
     "id": 4,
-    "question": "wqweqweqweqwe",
-    "options": ["apple", "apple", "apple", "apple"],
-    "answer_index": 1,
+    "question": "Given set A = {a, b, c). An identity relation in set A is",
+    "options": [
+      "R = {(a, b), (a, c)}",
+      "R = {(a, a), (b, b), (c, c)}",
+      "R = {(a, a), (b, b), (c, c), (a, c)}",
+      "R= {(c, a), (b, a), (a, a)}"
+    ],
+    "answer_index": 2,
   },
 ];
