@@ -10,6 +10,7 @@ class Option extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 80,
       margin: EdgeInsets.only(top: kDefaultPadding),
       padding: EdgeInsets.all(kDefaultPadding),
       decoration: BoxDecoration(
@@ -20,7 +21,7 @@ class Option extends StatelessWidget {
         children: [
           Text(
             "1. Test",
-            style: TextStyle(color: kGrayColor, fontSize: 16),
+            style: TextStyle(color: kGrayColor, fontSize: 20),
           ),
           Container(
             height: 26,
