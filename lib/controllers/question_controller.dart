@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:quizapp/models/Questions.dart';
 
@@ -18,6 +19,21 @@ class QuestionController extends GetxController
 
   List<Question> get questions => this._questions;
 
+  bool _isAnswered = false;
+  bool get isAnswered => this._isAnswered;
+
+  int _correctAns;
+  int get correctAns => this._correctAns;
+
+  int _selectedAns;
+  int get selectedAns => this._selectedAns;
+
+  RxInt _questionNumber = 1.obs;
+  RxInt get questionNumber => this._questionNumber;
+
+  int _numOfCorrectAns;
+  int get numOfCorrectAns => this._numOfCorrectAns;
+
   @override
   void onInit() {
     _animationController =
@@ -29,5 +45,16 @@ class QuestionController extends GetxController
 
     _animationController.forward();
     super.onInit();
+  }
+
+  void checkAns(Question question, int selectedIndex) {
+    _isAnswered = true;
+    _correctAns = question.answer;
+    _selectedAns = selectedIndex;
+
+    if (_correctAns == _selectedAns) _numOfCorrectAns++;
+
+    _animationController.stop();
+    update();
   }
 }
