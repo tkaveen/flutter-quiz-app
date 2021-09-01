@@ -32,14 +32,18 @@ class Option extends StatelessWidget {
             return kGrayColor;
           }
 
+          IconData getRightIcon() {
+            return getRightIcon() == kRedColor ? Icons.close : Icons.done;
+          }
+
           return InkWell(
             onTap: press,
             child: Container(
-              height: 80,
+              // height: 80,
               margin: EdgeInsets.only(top: kDefaultPadding),
               padding: EdgeInsets.all(kDefaultPadding),
               decoration: BoxDecoration(
-                  border: Border.all(color: kGrayColor),
+                  border: Border.all(color: getRightColor()),
                   borderRadius: BorderRadius.circular(15)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -52,8 +56,18 @@ class Option extends StatelessWidget {
                     height: 26,
                     width: 26,
                     decoration: BoxDecoration(
+                        color: getRightColor() == kGrayColor
+                            ? Colors.transparent
+                            : getRightColor(),
                         borderRadius: BorderRadius.circular(50),
                         border: Border.all(color: getRightColor())),
+                    child: getRightIcon() == kGrayColor
+                        ? null
+                        : Icon(
+                            getRightIcon(),
+                            color: Colors.white,
+                            size: 16,
+                          ),
                   )
                 ],
               ),
