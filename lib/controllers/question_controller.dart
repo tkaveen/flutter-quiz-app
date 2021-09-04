@@ -52,6 +52,13 @@ class QuestionController extends GetxController
     super.onInit();
   }
 
+  @override
+  void onClose() {
+    super.onClose();
+    _animationController.dispose();
+    _pageController.dispose();
+  }
+
   void checkAns(Question question, int selectedIndex) {
     _isAnswered = true;
     _correctAns = question.answer;
@@ -75,5 +82,9 @@ class QuestionController extends GetxController
       _animationController.reset();
       _animationController.forward().whenComplete(nextQuestion);
     }
+  }
+
+  void updateTheQnNum(int index) {
+    _questionNumber.value = index + 1;
   }
 }

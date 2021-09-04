@@ -37,24 +37,26 @@ class Body extends StatelessWidget {
                 height: kDefaultPadding,
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-                child: Text.rich(TextSpan(
-                  text: "Question 1",
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline4
-                      .copyWith(color: kSecondaryColor),
-                  children: [
-                    TextSpan(
-                        text: "/10",
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline5
-                            .copyWith(color: kSecondaryColor))
-                  ],
-                )),
-              ),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                  child: Obx(
+                    () => Text.rich(TextSpan(
+                      text:
+                          "Question ${_questionController.questionNumber.value}",
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline4
+                          .copyWith(color: kSecondaryColor),
+                      children: [
+                        TextSpan(
+                            text: "/10",
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline5
+                                .copyWith(color: kSecondaryColor))
+                      ],
+                    )),
+                  )),
               Divider(
                 thickness: 1.5,
                 color: Color(0xFF8B94BC),
@@ -66,6 +68,7 @@ class Body extends StatelessWidget {
                 child: PageView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   controller: _questionController.pageController,
+                  onPageChanged: _questionController.updateTheQnNum,
                   itemCount: _questionController.questions.length,
                   itemBuilder: (context, index) => QuestionCard(
                     question: _questionController.questions[index],
