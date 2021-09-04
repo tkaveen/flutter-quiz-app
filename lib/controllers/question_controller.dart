@@ -46,7 +46,7 @@ class QuestionController extends GetxController
         update();
       });
 
-    _animationController.forward();
+    _animationController.forward().whenComplete(nextQuestion);
     _pageController = PageController();
 
     super.onInit();
@@ -63,11 +63,17 @@ class QuestionController extends GetxController
     update();
 
     Future.delayed(Duration(seconds: 3), () {
+      nextQuestion();
+    });
+  }
+
+  void nextQuestion() {
+    if (_questionNumber.value != _questions.length) {
       _isAnswered = false;
       _pageController.nextPage(
           duration: Duration(milliseconds: 250), curve: Curves.ease);
       _animationController.reset();
-      _animationController.forward();
-    });
+      _animationController.forward().whenComplete(nextQuestion);
+    }
   }
 }
