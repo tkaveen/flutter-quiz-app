@@ -49,7 +49,7 @@ class Body extends StatelessWidget {
                           .copyWith(color: kSecondaryColor),
                       children: [
                         TextSpan(
-                            text: "/10",
+                            text: "/${_questionController.questions.length}",
                             style: Theme.of(context)
                                 .textTheme
                                 .headline5
