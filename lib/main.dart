@@ -16,11 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.grey[900],
-        // primarySwatch: Colors.blue,
       ),
-      // theme: ThemeData.dark(),
-      // home: WelcomeScreen(),
-      // home: QuizScreen(),
       home: WelcomeScreen(),
     );
   }
