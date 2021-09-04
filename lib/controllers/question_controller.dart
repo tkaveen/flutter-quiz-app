@@ -9,6 +9,9 @@ class QuestionController extends GetxController
   Animation _animation;
   Animation get animation => this._animation;
 
+  PageController _pageController;
+  PageController get pageController => this._pageController;
+
   List<Question> _questions = sample_data
       .map((question) => Question(
           id: question['id'],
@@ -44,6 +47,8 @@ class QuestionController extends GetxController
       });
 
     _animationController.forward();
+    _pageController = PageController();
+
     super.onInit();
   }
 
@@ -56,5 +61,13 @@ class QuestionController extends GetxController
 
     _animationController.stop();
     update();
+
+    Future.delayed(Duration(seconds: 3), () {
+      _isAnswered = false;
+      _pageController.nextPage(
+          duration: Duration(milliseconds: 250), curve: Curves.ease);
+      _animationController.reset();
+      _animationController.forward();
+    });
   }
 }

@@ -33,13 +33,13 @@ class Option extends StatelessWidget {
           }
 
           IconData getRightIcon() {
-            return getRightIcon() == kRedColor ? Icons.close : Icons.done;
+            return getRightColor() == kRedColor ? Icons.close : Icons.done;
           }
 
           return InkWell(
             onTap: press,
             child: Container(
-              // height: 80,
+              height: 80,
               margin: EdgeInsets.only(top: kDefaultPadding),
               padding: EdgeInsets.all(kDefaultPadding),
               decoration: BoxDecoration(
