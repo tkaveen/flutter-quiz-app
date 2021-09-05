@@ -17,7 +17,7 @@ const List sample_data = [
       "equivalence relation",
       "symmetric"
     ],
-    "answer_index": 4,
+    "answer_index": 3,
   },
   {
     "id": 2,
